@@ -6,7 +6,7 @@ def index
   # GET /artists/1
   def show
     @artist = Artist.find(params[:id])
-    @dose = Dose.new
+   # @artist = Artist.new
   end
 
   # GET /artists/new
