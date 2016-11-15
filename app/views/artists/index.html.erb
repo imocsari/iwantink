@@ -5,10 +5,11 @@
     <% @artists.each do |artist| %>
       <div class="col-xs-12 col-sm-4">
         <div class="card text-center">
-        <%= "#{@artist.first_name} #{@artist.last_name}" %>
+        <%= "#{artist.first_name} #{artist.last_name}" %>
+        <%= link_to artist.first_name, artist_path(artist) %>
           <% end %>
           <div class="card-body">
-            <%= link_to artist.first_name, artist_path(artist) %>
+
           </div>
         </div>
       </div>
