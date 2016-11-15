@@ -1,4 +1,6 @@
 class ArtistsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [ :index ]
+
 def index
     @artists = Artist.all
   end
@@ -6,7 +8,6 @@ def index
   # GET /artists/1
   def show
     @artist = Artist.find(params[:id])
-   # @artist = Artist.new
   end
 
   # GET /artists/new
