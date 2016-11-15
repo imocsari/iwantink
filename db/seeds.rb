@@ -8,10 +8,6 @@
 
 User.create([{email: "ajkdad@ds.com", password: "fdsfsdfdssfdsf", firstname: "alex", lastname: "Siskos"}])
 
-Artist.create([{ first_name: 'Antonio', last_name: 'Smith', email: 'smith_antonio59@hotmail.com', password: "antonio", bio: 'I am 27 year old experienced tattoo artist with 10 years experience, I am experienced in all styles', }])
-Artist.create([{ first_name: 'Gab', last_name: 'Del', email: 'gabdelaun@mail.com', password: "antonio", bio: 'I am 27 year old experienced tattoo artist with 10 years experience, I am experienced in all styles', }])
-Artist.create([{ first_name: 'Nicholas', last_name: 'Andreas', email: 'nicholas@mail.com', password: "nicholas", bio: 'I am 27 year old experienced tattoo artist with 10 years experience, I am experienced in all styles', }])
+Artist.create([{ first_name: 'Antonio', last_name: 'Smith', email: 'smith_antonio59@hotmail.com', password: "antonio", bio: 'I am 27 year old experienced tattoo artist with 10 years experience, I am experienced in all styles', picture_url: "http://res.cloudinary.com/dvqpald5f/image/upload/v1479225966/tatou1_tivbzm.jpg"}])
+Artist.create([{ first_name: 'Gab', last_name: 'Del', email: 'gabdelaun@mail.com', password: "antonio", bio: 'I am 27 year old experienced tattoo artist with 10 years experience, I am experienced in all styles', picture_url: "http://res.cloudinary.com/dvqpald5f/image/upload/v1479226112/tatou2_nelzjo.jpg"}])
 
-Artist.create([{ first_name: 'Imre', last_name: 'Paul', email: 'imre59@hotmail.com', password: "antonio", bio: 'I am 27 year old experienced tattoo artist with 10 years experience, I am experienced in all styles', }])
-Artist.create([{ first_name: 'Paul', last_name: 'Daniels', email: 'pauldaniels@mail.com', password: "antonio", bio: 'I am 27 year old experienced tattoo artist with 10 years experience, I am experienced in all styles', }])
-Artist.create([{ first_name: 'Pedro', last_name: 'Sammone', email: 'pedro@mail.com', password: "nicholas", bio: 'I am 27 year old experienced tattoo artist with 10 years experience, I am experienced in all styles', }])
