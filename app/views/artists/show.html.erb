@@ -1,20 +1,22 @@
 <div class="container">
   <div class="row">
     <div class="home_title col-xs-12 col-sm-6 col-sm-offset-3">
-      <h1><%= "#{@artist.first_name} #{@artist.last_name}" %></h1>
-      <div class="container">
-        <div class="bio">
-        <h2>
-          Bio
-        </h2>
-          <p>
-            <%= "#{@artist.bio}"%>
-          </p>
-        </div>
-<%= link_to 'Back', artists_path %>
-      </div>
+      <h1 class = text-center><%= "#{@artist.first_name} #{@artist.last_name}" %></h1>
 
+      <div class="text-center row">
+          <div class="col-xs-12 col-sm-12">
+            <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('card-paris.jpeg');">
+              <div class="card-category">BIO</div>
+              <div class="card-description">
+
+                <p> <%= "#{@artist.bio}"%> </p>
+              </div>
+              <a class="card-link" href="#" ></a>
+            </div>
+          </div>
 
     </div>
+      <%= link_to 'Back', artists_path %>
   </div>
 </div>
+
