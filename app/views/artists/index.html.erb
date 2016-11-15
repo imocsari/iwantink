@@ -1,2 +1,16 @@
-<h1>Artists#index</h1>
-<p>Find me in app/views/artists/index.html.erb</p>
+<h1 class="home_title text-center"> Your Profile </h1>
+
+<div class="container">
+  <div class="row">
+    <% @artists.each do |artist| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card text-center">
+        <%= "#{@artist.first_name} #{@artist.last_name}" %>
+          <% end %>
+          <div class="card-body">
+            <%= link_to artist.first_name, artist_path(artist) %>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
