@@ -1,2 +1,20 @@
-<h1>Artists#show</h1>
-<p>Find me in app/views/artists/show.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="home_title col-xs-12 col-sm-6 col-sm-offset-3">
+      <h1><%= "#{@artist.first_name} #{@artist.last_name}" %></h1>
+      <div class="container">
+        <div class="bio">
+        <h2>
+          Bio
+        </h2>
+          <p>
+            <%= "#{@artist.bio}"%>
+          </p>
+        </div>
+<%= link_to 'Back', artists_path %>
+      </div>
+
+
+    </div>
+  </div>
+</div>
