@@ -1,17 +1,43 @@
-<h1 class="home_title text-center"> Your Profile </h1>
+<h1 class="home_title text-center"> Your local tattoo artists </h1>
+
 
 <div class="container">
   <div class="row">
-    <% @artists.each do |artist| %>
-      <div class="col-xs-12 col-sm-4">
-        <div class="card text-center">
-        <%= "#{artist.first_name} #{artist.last_name}" %>
-        <%= link_to artist.first_name, artist_path(artist) %>
-          <% end %>
-          <div class="card-body">
-
+    <div class="col-xs-6">
+      <div class="row">
+        <div class="col-xs-12">
+          <h2>Filters</h2>
+           <form class="form-filter" >
+           <div class="">
+            <input type="text" class="form-control" placeholder="Style">
+             <input type="text" class="form-control" placeholder="Price">
+              <input type="text" class="form-control" placeholder="Update postcode">
+              </div>
+         </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <h2>Artists</h2>
+          <div class="row">
+            <% @artists.each do |artist| %>
+            <div class="col-xs-12 col-md-6">
+              <div class="card2" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path(artist.picture.path) %>');">
+                <%= "#{artist.first_name} #{artist.last_name}" %>
+                <%= link_to artist.first_name, artist_path(artist) %>
+              </div>
+            </div>
+            <% end %>
           </div>
         </div>
       </div>
+    </div>
+    <div class = "map">
+    <div class="col-xs-6 text-center">
+
+      <img src="map.png" alt="" width="680" height="805">
+      </div>
+    </div>
   </div>
 </div>
+
