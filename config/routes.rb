@@ -17,7 +17,8 @@ Rails.application.routes.draw do
   mount Attachinary::Engine => "/attachinary"
 
   # resources  :users # only: [:show, :new, :create, :index, ]
-  resources :artists #only: [:show, :new, :create, :index,:destroy]
-  resources :bookings
+  resources :artists do #only: [:show, :new, :create, :index,:destroy]
+    resources :bookings
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
