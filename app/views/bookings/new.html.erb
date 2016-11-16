@@ -43,16 +43,14 @@
 
  -->
 
-<%= simple_form_for @artist do |form| %>
-  <%= form.input :title, label: "Your name" %>
-  <%= form.input :company, label: "Best email to reach you" %>
-  <%= form.input :url, label: "Contact Number" %>
-  <%= form.input :url, label: "Location you would like tattoo on your body" %>
-  <%= form.input :url, label: "Rough Size - Height...cm Width...cm" %>
-  <%= form.input :url, label: "Budget (£)" %>
-  <%= form.input :url, label: "Ideal time for tattoo" %>
-  <%= form.input :url, label: "Tattoo Description" %>
+<%= simple_form_for [@artist, @booking] do |form| %>
+  <%= form.input :artist_id, label: "Your name*" %>
+  <%= form.input :user_id, label: "Email*" %>
+  <%= form.input :user_id, label: "Contact number*" %>
+  <%= form.input :user_id, label: "Body part you want to tattoo" %>
+  <%= form.input :user_id, label: "Budget" %>
+  <%= form.input :user_id, label: "Prefered date and time" %>
+  <%= form.input :user_id, label: "Description" %>
   <%= form.button :submit %>
 
 <% end %>
-
