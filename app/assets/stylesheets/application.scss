@@ -13,3 +13,11 @@
 @import "components/index";
 @import "pages/index";
 @import "vendor/index";
+
+.link-artist {
+  color: white;
+}
+
+.link-artist:hover {
+  color: #80DAEB;
+}
