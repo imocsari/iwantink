@@ -2,15 +2,14 @@
   <div class="row">
     <div class="home_title col-xs-12 col-sm-6 col-sm-offset-3">
       <h1 class = "text-center"><%= "#{@artist.first_name} #{@artist.last_name}" %></h1>
-
+<%= link_to 'update profile', edit_artist_path(@artist) %>
       <div class="text-center row">
           <div class="col-xs-12 col-sm-12">
             <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path(@artist.picture.path) %>');">
-              <div class="card-category">BIO</div>
-              <div class="card-description">
-
+                <div class="card-category">BIO</div>
+                <div class="card-description">
                 <p> <%= "#{@artist.bio}"%> </p>
-              </div>
+                </div>
               <a class="card-link" href="#" ></a>
             </div>
           </div>
@@ -18,28 +17,29 @@
           <h2 class="text-center"> </h2>
       </div>
 
+    </div>
+  </div>
+</div>
+
+
 
 
         <h2 class= "text-center">Gallery</h2>
+
         <div class="row">
-           <div class="col-xs-12 col-sm-4">
-            <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('card-brussels.jpeg');">
-            <div class="card-category"></div>
-          </div>
-          </div>
-          <div class="col-xs-12 col-sm-4">
-            <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('card-brussels.jpeg');">
-            <div class="card-category"></div>
-          </div>
-          </div>
-          <div class="col-xs-12 col-sm-4">
-            <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('card-brussels.jpeg');">
-            <div class="card-category"></div>
-          </div>
-          </div>
+
+          <% @artist.photos.each do |photo| %>
+             <div class="col-xs-12 col-sm-4">
+              <div class="card-gallery" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path(photo.path) %>');">
+              <div class="card-category"></div>
+            </div>
+            </div>
+          <% end %>
+
+
+
+
         </div>
+        <%= link_to 'Back', artists_path %>
 
-
-    <%= link_to 'Back', artists_path %>
-</div>
 

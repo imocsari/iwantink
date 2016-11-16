@@ -23,8 +23,7 @@
             <% @artists.each do |artist| %>
             <div class="col-xs-12 col-md-6">
               <div class="card2" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path(artist.picture.path) %>');">
-                <%= "#{artist.first_name} #{artist.last_name}" %>
-                <%= link_to artist.first_name, artist_path(artist) %>
+              <%= link_to artist.full_name, artist_path(artist), class: 'link-artist'  %>
               </div>
             </div>
             <% end %>
