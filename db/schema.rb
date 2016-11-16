@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161116155027) do
+ActiveRecord::Schema.define(version: 20161116162942) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,8 +56,15 @@ ActiveRecord::Schema.define(version: 20161116155027) do
     t.integer  "artist_id"
     t.datetime "starts_at"
     t.datetime "confirmed_at"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.string   "name"
+    t.string   "email"
+    t.string   "contact"
+    t.string   "tattoo_place"
+    t.integer  "budget"
+    t.datetime "prefered_date"
+    t.text     "description"
     t.index ["artist_id"], name: "index_bookings_on_artist_id", using: :btree
     t.index ["user_id"], name: "index_bookings_on_user_id", using: :btree
   end

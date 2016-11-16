@@ -43,13 +43,13 @@
 
  -->
 
-<%= simple_form_for [@artist, @booking] do |form| %>
-  <%= form.input :artist_id, label: "Your name*" %>
-  <%= form.input :user_id, label: "Email*" %>
-  <%= form.input :user_id, label: "Contact number*" %>
-  <%= form.input :user_id, label: "Body part you want to tattoo" %>
-  <%= form.input :user_id, label: "Budget" %>
-  <%= form.input :user_id, label: "Prefered date and time" %>
-  <%= form.input :user_id, label: "Description" %>
-  <%= form.button :submit %>
+<%= simple_form_for [@artist, @booking] do |f| %>
+  <%= f.input :name, label: "Your name*" %>
+  <%= f.input :email, label: "Email*" %>
+  <%= f.input :contact, label: "Contact number*" %>
+  <%= f.input :tattoo_place, label: "Body part you want to tattoo" %>
+  <%= f.input :budget, label: "Budget" %>
+  <%= f.input :prefered_date, label: "Prefered date and time" %>
+  <%= f.input :description, label: "Description" %>
+  <%= f.button :submit %>
 <% end %>

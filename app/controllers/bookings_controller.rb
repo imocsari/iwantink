@@ -17,7 +17,7 @@ class BookingsController < ApplicationController
   def create
       # Booking.create(booking_params)
       # redirect_to_artists_index
-      binding.pry
+      
       @booking = Booking.new(params[:booking])
       if @booking.save
         redirect_to_artists_index
