@@ -1,5 +1,6 @@
 class ArtistsController < ApplicationController
-  # skip_before_action :authenticate_user!, only: [ :index, :show ]
+  skip_before_action :authenticate_user!, only: [ :index, :show, :edit, :update ]
+
 
 def index
     @artists = Artist.all
@@ -15,6 +16,21 @@ def index
     @artist = Artist.new
   end
 
+  def edit
+    @artist = Artist.find(params[:id])
+  end
+
+  def update
+    @artist = Artist.find(params[:id])
+
+    if @artist.update_attributes(artist_params)
+      redirect_to artist_path(@artist)
+    else
+      render 'edit'
+    end
+  end
+
+
   # POST /artists
   def create
     @artist = Artist.new(artist_params)
@@ -26,7 +42,7 @@ def index
     def destroy
     @artist = Artist.find(params[:id])
     @artist.destroy
-    redirect_to artist_path(@cocktail)
+    redirect_to artist_path(@artist)
     end
   end
 
@@ -34,6 +50,6 @@ def index
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def artist_params
-    params.require(:artist).permit(:first_name, :last_name)
+    params.require(:artist).permit(:first_name, :last_name, :picture, photos: [])
   end
 end

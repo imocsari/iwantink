@@ -1,15 +1,5 @@
 Rails.application.routes.draw do
-  get 'artists/index'
 
-  get 'artists/show'
-
-  get 'artists/new'
-
-  get 'artists/update'
-
-  get 'artists/create'
-
-  get 'artists/destroy'
 
   devise_for :artists
   devise_for :users
