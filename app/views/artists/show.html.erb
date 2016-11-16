@@ -13,7 +13,7 @@
               <a class="card-link" href="#" ></a>
             </div>
           </div>
-          <input type="submit" class="btn btn-primary btn-lg" value="Book now">
+          <%= link_to 'Book now', new_artist_booking_path(@artist), class: "btn btn-primary btn-lg" %>
           <h2 class="text-center"> </h2>
       </div>
 
@@ -41,5 +41,5 @@
 
         </div>
         <%= link_to 'Back', artists_path %>
-
+</div>
 

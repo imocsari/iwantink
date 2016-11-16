@@ -1,0 +1,58 @@
+<!-- <div align="center">
+<h1>Bookings and Enquiries</h1>
+<p>Please complete the form below to enquire about getting a tattoo</p>
+</div>
+
+<form action="">
+  <div align="center">
+    <br>
+    <label for="">Your name</label>
+    <input type="text">
+    <br>
+    <br>
+    <label for="">Best email to reach you</label>
+    <input type="text">
+    <br>
+    <label for="">Contact Number</label>
+    <input type="text">
+
+    <label for="">Place for tattoo</label>
+    <input type="text">
+
+    <label for="">Rough Size - Height...cm Width...cm</label>
+    <input type="text">
+
+    <label for="">Budget (£)</label>
+    <input type="text">
+
+    <label for="">Ideal time for tatto</label>
+    <input type="text">
+
+    <label for="">Tattoo Description</label>
+    <p>To ensure we provide you with a full and comprehensive answer, please provide us with as much information as possible in the box below EG, colour, style, subjects, background etc</p>
+    <input type="text">
+
+    <label for="">Legal</label>
+    <p>I am </p>
+    <input type="box">
+
+
+    <input type="Confirm booking enquiry">
+  </div>
+</form>
+
+ -->
+
+<%= simple_form_for @artist do |form| %>
+  <%= form.input :title, label: "Your name" %>
+  <%= form.input :company, label: "Best email to reach you" %>
+  <%= form.input :url, label: "Contact Number" %>
+  <%= form.input :url, label: "Location you would like tattoo on your body" %>
+  <%= form.input :url, label: "Rough Size - Height...cm Width...cm" %>
+  <%= form.input :url, label: "Budget (£)" %>
+  <%= form.input :url, label: "Ideal time for tattoo" %>
+  <%= form.input :url, label: "Tattoo Description" %>
+  <%= form.button :submit %>
+
+<% end %>
+

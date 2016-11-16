@@ -1,6 +1,7 @@
 class ArtistsController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index, :show, :edit, :update ]
 
+
 def index
     @artists = Artist.all
   end
@@ -34,7 +35,7 @@ def index
   def create
     @artist = Artist.new(artist_params)
     if @artist.save
-      redirect_to artisit_path(@artist)
+      redirect_to artist_path(@artist)
     else
       render :new
     end
