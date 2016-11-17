@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
 
-  devise_for :artists
+  devise_for :artists, :controllers => { omniauth_callbacks: 'artists/omniauth_callbacks' }
   devise_for :users
   root to: 'pages#home'
   mount Attachinary::Engine => "/attachinary"
