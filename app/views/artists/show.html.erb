@@ -18,7 +18,25 @@
           </div>
           <%= link_to 'Book now', new_artist_booking_path(@artist), class: "btn btn-primary btn-lg" %>
           <h2 class="text-center"> </h2>
+
       </div>
+      <%= simple_form_for [@artist, @review] do |f| %>
+        <%= f.input :content, label: "Leave a review" %>
+        <%= f.input :stars, collection: 1..5, prompt: "Nb of stars", selected: 3 %>
+        <%= f.submit "add a review", class: "btn btn-primary center-block" %>
+      <% end %>
+          <% @artist.reviews.each do |r| %>
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+              <h2><%= r.content %></h2>
+              <% r.stars do %>
+              <i class="fa fa-star"></i>
+              <% end %>
+              <hr>
+          </div>
+        </div>
+        <% end %>
+
 
     </div>
   </div>
@@ -45,4 +63,3 @@
         </div>
         <%= link_to 'Back', artists_path %>
 </div>
-
