@@ -10,7 +10,7 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to artist_path(@artist)
     else
-      render "artist/show"
+      render "artists/show"
     end
   end
 

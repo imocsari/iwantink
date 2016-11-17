@@ -10,6 +10,14 @@
           <div class="col-xs-12 col-sm-12">
             <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path(@artist.picture.path) %>');">
                 <div class="card-category">BIO</div>
+                <div>
+                    <% @artist.reviews.each do |r| %>
+                        <% r.stars do %>
+                        <i class="fa fa-star" ></i>
+                        <% end %>
+                    <i class="fa fa-star color=yellow"></i>
+                    <% end %>
+                </div>
                 <div class="card-description">
                 <p> <%= "#{@artist.bio}"%> </p>
                 </div>
@@ -22,7 +30,7 @@
       </div>
       <%= simple_form_for [@artist, @review] do |f| %>
         <%= f.input :content, label: "Leave a review" %>
-        <%= f.input :stars, collection: 1..5, prompt: "Nb of stars", selected: 3 %>
+        <%= f.input :stars, collection: 1..5, prompt: "Number of stars", selected: 3 %>
         <%= f.submit "add a review", class: "btn btn-primary center-block" %>
       <% end %>
           <% @artist.reviews.each do |r| %>
@@ -31,6 +39,7 @@
               <h2><%= r.content %></h2>
               <% r.stars do %>
               <i class="fa fa-star"></i>
+              <h2><%= r.stars %></h2>
               <% end %>
               <hr>
           </div>
