@@ -18,7 +18,7 @@ def index
   # GET /artists/1
   def show
     @artist = Artist.find(params[:id])
-
+    @review = Review.new
   end
 
   # GET /artists/new
