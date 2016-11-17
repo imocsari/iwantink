@@ -1,6 +1,8 @@
 class ArtistsController < ApplicationController
   #skip_before_action :authenticate_user!, only: [ :index, :show ]
 
+  before_filter :authenticate_user!, :except => [:show, :index]
+
 
 def index
     @artists = Artist.all
@@ -29,6 +31,7 @@ def index
       render 'edit'
     end
   end
+
 
 
   # POST /artists

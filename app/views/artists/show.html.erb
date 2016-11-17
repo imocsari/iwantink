@@ -2,7 +2,10 @@
   <div class="row">
     <div class="home_title col-xs-12 col-sm-6 col-sm-offset-3">
       <h1 class = "text-center"><%= "#{@artist.first_name} #{@artist.last_name}" %></h1>
-<%= link_to 'update profile', edit_artist_path(@artist) %>
+      <% if (@artist == current_artist) %>
+        <%= link_to 'Update Profile', edit_artist_path(@artist) %>
+      <% end %>
+
       <div class="text-center row">
           <div class="col-xs-12 col-sm-12">
             <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path(@artist.picture.path) %>');">
