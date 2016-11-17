@@ -13,3 +13,5 @@ Artist.create([{ first_name: 'Bob', last_name: 'Dr', email: 'Drbob@mail.com', pa
 Artist.create([{ first_name: 'Tony', last_name: 'Sheldon', email: 'tony.sheldon@hotmail.com', password: "antonio", bio: 'I have 45 years of experience as a tattoo artist, I can design what ever you whish', picture_url: "http://res.cloudinary.com/dvqpald5f/image/upload/v1479294304/vieux_tatoueur_pwlevr.jpg"}])
 Artist.create([{ first_name: 'Rob', last_name: 'Goks', email: 'rob.goks@hotmail.com', password: "antonio", bio: 'I have been doing tattoos for the past 9 years. Come visit my gallery to see more about my work', picture_url: "http://res.cloudinary.com/dvqpald5f/image/upload/v1479294237/jeune_tattou_khizmh.jpg"}])
 Artist.create([{ first_name: 'Cindy', last_name: 'Jinks', email: 'cindy.jinks@hotmail.com', password: "antonio", bio: 'I am sepecialized in graffiti, lettering and script. Can easily design your lover on your arm.', picture_url: "http://res.cloudinary.com/dvqpald5f/image/upload/v1479294401/fille_tatou_op5tgr.jpg"}])
+
+Review.create([{ content: "Was a wonderful experience", stars: 4}])
