@@ -1,27 +1,20 @@
 class BookingsController < ApplicationController
 
-  before_action :load_artist
+  before_action :load_artist, only: [ :new, :create ]
 
-  private
-
-  def load_artist
-    @artist = Artist.find(params[:artist_id])
+  def show
+    @booking = Booking.find(params[:id])
   end
 
-  public
-
   def new
-      @booking = Booking.new
+    @booking = Booking.new
   end
 
   def create
-      # Booking.create(booking_params)
-      # redirect_to_artists_index
-      
-      @booking = Booking.new(params[:booking])
-      if @booking.save
-        redirect_to_artists_index
-      end
+    @booking = Booking.new(booking_params)
+    if @booking.save
+      redirect_to booking_path(@booking)
+    end
   end
 
   def destroy
@@ -30,9 +23,13 @@ class BookingsController < ApplicationController
     redirect_to_artists_index
   end
 
-  def booking_params
-    # params.require(:booking).permit(:title, :company, :url)
-    # @booking = Booking.new(.require(:booking).permit(:title, :company, :url)
+  private
+
+  def load_artist
+    @artist = Artist.find(params[:artist_id])
   end
 
+  def booking_params
+    params.require(:booking).permit(:name, :email, :contact, :tattoo_place, :budget, :prefered_date, :description)
+  end
 end

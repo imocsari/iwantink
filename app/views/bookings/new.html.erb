@@ -1,58 +1,28 @@
-<!-- <div align="center">
+
+<div class="container">
+  <div class="row">
+    <div class="home_title col-xs-12 col-sm-6 col-sm-offset-3">
+    <div class="text-center">
 <h1>Bookings and Enquiries</h1>
 <p>Please complete the form below to enquire about getting a tattoo</p>
+
+
+    <%= simple_form_for [@artist, @booking] do |f| %>
+      <%= f.input :name, label: "Your name*" %>
+      <%= f.input :email, label: "Email*" %>
+      <%= f.input :contact, label: "Contact number*" %>
+      <%= f.input :tattoo_place, label: "Body part you want to tattoo" %>
+      <%= f.input :budget, label: "Budget" %>
+      <%= f.input :prefered_date, label: "Prefered date and time" %>
+      <%= f.input :description, label: "Description" %>
+      <%= f.submit 'Booking Enquiry', class: 'btn btn-primary btn-lg' %>
+    <% end %>
+
+   </div>
+
+
+    </div>
+  </div>
 </div>
 
-<form action="">
-  <div align="center">
-    <br>
-    <label for="">Your name</label>
-    <input type="text">
-    <br>
-    <br>
-    <label for="">Best email to reach you</label>
-    <input type="text">
-    <br>
-    <label for="">Contact Number</label>
-    <input type="text">
-
-    <label for="">Place for tattoo</label>
-    <input type="text">
-
-    <label for="">Rough Size - Height...cm Width...cm</label>
-    <input type="text">
-
-    <label for="">Budget (£)</label>
-    <input type="text">
-
-    <label for="">Ideal time for tatto</label>
-    <input type="text">
-
-    <label for="">Tattoo Description</label>
-    <p>To ensure we provide you with a full and comprehensive answer, please provide us with as much information as possible in the box below EG, colour, style, subjects, background etc</p>
-    <input type="text">
-
-    <label for="">Legal</label>
-    <p>I am </p>
-    <input type="box">
-
-
-    <input type="Confirm booking enquiry">
-  </div>
-</form>
-
- -->
- <div>
-<h1>Bookings and Enquiries</h1>
-<p>Please complete the form below to enquire about getting a tattoo</p>
-</div class="simple">
-<%= simple_form_for [@artist, @booking] do |f| %>
-  <%= f.input :name, label: "Your name*" %>
-  <%= f.input :email, label: "Email*" %>
-  <%= f.input :contact, label: "Contact number*" %>
-  <%= f.input :tattoo_place, label: "Body part you want to tattoo" %>
-  <%= f.input :budget, label: "Budget" %>
-  <%= f.input :prefered_date, label: "Prefered date and time" %>
-  <%= f.input :description, label: "Description" %>
-  <%= f.button :submit %>
-<% end %>
+<!-- Button trigger modal -->
