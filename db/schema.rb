@@ -69,7 +69,7 @@ ActiveRecord::Schema.define(version: 20161117132526) do
     t.string   "email"
     t.string   "contact"
     t.string   "tattoo_place"
-    t.integer  "budget"
+    t.string   "budget"
     t.datetime "prefered_date"
     t.text     "description"
     t.index ["artist_id"], name: "index_bookings_on_artist_id", using: :btree
