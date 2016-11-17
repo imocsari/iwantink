@@ -5,7 +5,21 @@ class ArtistsController < ApplicationController
 
 
 def index
-    @artists = Artist.all
+
+    @artists = Artist.where.not(latitude: nil, longitude: nil)
+
+    if params[:location].present?
+      @artists = Artist.near(params[:location] || 10)
+    else
+      @artists = Artist.all
+    end
+
+    @hash = Gmaps4rails.build_markers(@artists) do |artist, marker|
+      marker.lat artist.latitude
+      marker.lng artist.longitude
+
+      # marker.infowindow render_to_string(partial: "/artists/map_box", locals: { artist: artist })
+    end
   end
 
   # GET /artists/1

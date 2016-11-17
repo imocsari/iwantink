@@ -14,6 +14,8 @@ class Artist < ApplicationRecord
 
   has_attachment :picture
   has_attachments :photos
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
 
   def correct_artist?(artist)
       artist == current_artist
