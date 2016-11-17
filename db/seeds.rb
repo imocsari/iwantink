@@ -6,7 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create([{email: "ajkdad@ds.com", password: "fdsfsdfdssfdsf", firstname: "alex", lastname: "Siskos"}])
 
 Artist.destroy_all
 Artist.create!([{ first_name: 'Antonio', last_name: 'Smith', email: 'smith_antonio59@hotmail.com', password: "antonio", address: "SW1A 0WZ", bio: 'I am 27 year old experienced tattoo artist with 10 years experience, I am experienced in all styles', picture_url: "http://res.cloudinary.com/dvqpald5f/image/upload/v1479225966/tatou1_tivbzm.jpg"}])

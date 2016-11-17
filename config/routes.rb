@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   resources :artists do #only: [:show, :new, :create, :index,:destroy]
     resources :bookings
     resources :reviews, only: [:new, :create]
+    resources :notifications, only: [:create]
   end
+
+  resources :bookings, only: [:show]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
