@@ -44,7 +44,7 @@ class ArtistsController < ApplicationController
       redirect_to root_path
     end
 
-    if @artist.update_attributes(artist_params)
+    if @artist.update(artist_params)
       redirect_to artist_path(@artist)
     else
       render 'edit'
@@ -72,6 +72,6 @@ class ArtistsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def artist_params
-    params.require(:artist).permit(:first_name, :last_name, :picture, photos: [])
+    params.require(:artist).permit( :bio, :first_name, :last_name, :picture, photos: [])
   end
 end
