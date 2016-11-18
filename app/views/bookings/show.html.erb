@@ -1,22 +1,26 @@
-<div class="container">
-  <div class="row">
-    <div class="home_title col-xs-12 col-sm-6 col-sm-offset-3">
-    <div class="text-center">
-    <h2>Your booking enquiry</h2>
-    <ul>
-      <li><%= @booking.name %></li>
-      <li><%= @booking.email %></li>
-      <li><%= @booking.contact %></li>
-      <li><%= @booking.tattoo_place %></li>
-      <li><%= @booking.prefered_date %></li>
-      <li><%= @booking.description %></li>
-    </ul>
-</div>
-</div>
-</div>
+<div id="wrapper" class="padded">
+  <div class="container">
+    <div class="row">
+      <div class="home_title col-xs-12 col-sm-6 col-sm-offset-3">
+        <div class="text-center">
+          <h1>Your booking enquiry details</h1>
+
+          <p>We have sent a request over to your selected tattoo artist, you should have recieved an email, once the booking request has been confirmed by the tattoo artist you will receive confirmation of the booking.</p>
+          <ul class="list-unstyled">
+            <p>Name:</p><li><%= @booking.name %></li>
+            <p>Email:</p><li><%= @booking.email %></li>
+            <p>Contact:</p><li><%= @booking.contact %></li>
+            <p>Tattoo place:</p><li><%= @booking.tattoo_place %></li>
+            <p>Date and Time:</p><li><%= @booking.prefered_date %></li>
+            <p>Description:</p><li><%= @booking.description %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
-        <%= link_to 'Home', root_path %>
+
 
 
 
