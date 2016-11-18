@@ -3,4 +3,5 @@ class Review < ApplicationRecord
   validates :content, :stars, presence: true
   validates :stars, inclusion: {in: (1..5).to_a}
   validates :artist_id, presence: true
+  validates :content, length: { minimum: 10 }
 end

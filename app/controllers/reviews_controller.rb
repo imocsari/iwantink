@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+  # skip_before_action :authenticate_user!
   before_action :find_artist, only: [ :new, :create ]
 
   def new
