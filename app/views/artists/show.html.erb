@@ -13,7 +13,7 @@
                 <div>
                     <% @artist.reviews.each do |r| %>
                         <% r.stars do %>
-                        <i class="fa fa-star" ></i>
+                        <i class="fa fa-star" ></i>a
                         <% end %>
                     <i class="fa fa-star color=yellow"></i>
                     <% end %>
@@ -28,11 +28,7 @@
           <h2 class="text-center"> </h2>
 
       </div>
-      <%= simple_form_for [@artist, @review] do |f| %>
-        <%= f.input :content, label: "Leave a review" %>
-        <%= f.input :stars, collection: 1..5, prompt: "Number of stars", selected: 3 %>
-        <%= f.submit "add a review", class: "btn btn-primary center-block" %>
-      <% end %>
+      <%= render 'reviews/form', artist: @artist, review: @review %>
           <% @artist.reviews.each do |r| %>
           <div class="row">
             <div class="col-xs-12 col-sm-6 col-sm-offset-3">
