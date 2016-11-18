@@ -1,11 +1,7 @@
 class ArtistsController < ApplicationController
-  #skip_before_action :authenticate_user!, only: [ :index, :show ]
+  before_action :authenticate_artist!, only: [ :edit, :update ]
 
-  before_filter :authenticate_user!, :except => [:show, :index]
-
-
-def index
-
+  def index
     @artists = Artist.where.not(latitude: nil, longitude: nil)
 
     if params[:location].present?
@@ -35,10 +31,18 @@ def index
 
   def edit
     @artist = Artist.find(params[:id])
+    if @artist != current_artist
+      flash[:alert] = "Oops, you can't update another artist's profile!"
+      redirect_to root_path
+    end
   end
 
   def update
     @artist = Artist.find(params[:id])
+    if @artist != current_artist
+      flash[:alert] = "Oops, you can't update another artist's profile!"
+      redirect_to root_path
+    end
 
     if @artist.update_attributes(artist_params)
       redirect_to artist_path(@artist)
