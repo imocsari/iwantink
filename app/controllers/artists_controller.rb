@@ -18,7 +18,7 @@ def index
       marker.lat artist.latitude
       marker.lng artist.longitude
 
-      # marker.infowindow render_to_string(partial: "/artists/map_box", locals: { artist: artist })
+      marker.infowindow render_to_string(partial: "/artists/map_box", locals: { artist: artist })
     end
   end
 

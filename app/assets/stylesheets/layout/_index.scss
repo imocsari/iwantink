@@ -3,3 +3,16 @@
 @import "navbar";
 @import "card";
 @import "banner";
+
+.scrolling {
+  overflow: scroll;
+    width: 570px;
+    height: 500px;
+}
+
+.container {
+    width: 1150px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
