@@ -1,6 +1,12 @@
 class BookingsController < ApplicationController
 
-  before_action :load_artist, only: [ :new, :create ]
+  before_action :load_artist, only: [ :new, :create, :index ]
+
+
+  def index
+    @bookings = Booking.where(artist: @artist)
+  end
+
 
   def show
     @booking = Booking.find(params[:id])
@@ -12,6 +18,8 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
+    @booking.artist = @artist
+    @booking.user = current_user
     if @booking.save!
       UserMailer.welcome(booking_params[:email]).deliver_now
       redirect_to booking_path(@booking)
