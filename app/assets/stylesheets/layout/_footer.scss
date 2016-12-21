@@ -1,10 +1,13 @@
 // Your footer style
 #footer {
-  background: #333333;
   padding: 0px 0;
-  color: #CCCCCC;
-  position: bottom;
+  background-color: black;
 }
+
+.wrapper {
+  min-height: calc(100vh - 140px);
+}
+
 #footer p {
   margin-top: 17px;
 }
